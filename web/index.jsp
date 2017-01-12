@@ -26,8 +26,7 @@
     </style>
 </head>
 <body>
-Тут таблица:
-
+<h3>Тут таблица:</h3>
 <table class="showAll">
         <%
         ArrayList listTable = DataBaseWorker.showDB();
@@ -45,6 +44,7 @@
         </tr>
         <%}%>
     </table>
+<div class="refresh"><a href="index.jsp">UPDATE</a> <</div>
 
 <a href="/start1.html">CLICK</a>
   </body>

@@ -12,6 +12,9 @@ public class DataBaseWorker {
     private static final String queryShowDB = "Select t1.Name as name, t2.NAME as Cat_name, t1.PRICE price " +
                                               "From APP.FOODS t1 LEFT JOIN APP.CATEGORY t2 " +
                                               "ON t1.CATEGORY_ID = t2.ID";
+    private static final String queryShowAll = "Select t1.*, '||||||', t2.*" +
+                                                "From APP.FOODS t1 LEFT JOIN APP.CATEGORY t2 " +
+                                                 "ON t1.CATEGORY_ID = t2.ID";
 
     private static Connection conn = null;
     private static Statement stmt = null;
@@ -63,7 +66,7 @@ public class DataBaseWorker {
         try {
             if(conn == null) { createConnection();}
             stmt = conn.createStatement();
-            results = stmt.executeQuery(queryShowDB);
+            results = stmt.executeQuery(queryShowAll);
             ResultSetMetaData rsmd = null;
             //Вывод результата запроса в виде ArrayList, состоящий из ArrayListов
             try {
